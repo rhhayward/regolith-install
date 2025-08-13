@@ -38,10 +38,15 @@ echo "n" | ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/oh
 sudo apt install -y firefox kicad freecad
 
 ### add arduino from zip file, add desktop file
-curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-idea-2.zip
-mkdir ~/Arduino/
-unzip /tmp/arduino-idea-2.zip -d ~/Arduino/
-ln -s $(PWD)/Arduino/arduino-ide_2.3.3_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
+if [ -d "$(PWD)/Arduino/" ]; then
+    echo "~/Arduino/ already exists - skipping step"
+else
+    mkdir ~/Arduino/
+    curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-idea-2.zip
+    unzip /tmp/arduino-idea-2.zip -d ~/Arduino/
+    ln -s $(PWD)/Arduino/arduino-ide_2.3.3_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
+    rm /tmp/arduino-idea-2.zip
+fi
 
 sudo reboot
 

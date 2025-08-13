@@ -6,13 +6,13 @@ echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg
 sudo tee /etc/apt/sources.list.d/regolith.list
 
 # Update apt
-sudo apt update && sudo apt dist-upgrade
+sudo apt update && sudo apt dist-upgrade -y
 
 ### install regolith
-sudo apt install regolith-desktop regolith-session-flashback regolith-look-blackhole regolith-system-ubuntu
+sudo apt install -y regolith-desktop regolith-session-flashback regolith-look-blackhole regolith-system-ubuntu lightdm
 
 ### allow networking via applet
-sudo apt install regolith-wm-networkmanager
+sudo apt install -y regolith-wm-networkmanager
 sudo systemctl disable systemd-networkd-wait-online.service && sudo systemctl mask systemd-networkd-wait-online.service
 echo "network:\n  version:2\n  renderer:NetworkManager" | sudo tee /etc/netplan/50-cloud-init.yaml
 

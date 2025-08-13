@@ -1,5 +1,5 @@
 # Register the Regolith public key to your local apt
-wget -qO - https://archive.regolith-desktop.com/regolith.key | gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
+curl -s https://archive.regolith-desktop.com/regolith.key | gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
 
 # Add the repository URL to your local apt
 echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://archive.regolith-desktop.com/ubuntu/stable noble v3.3" | \
@@ -18,6 +18,12 @@ echo "network:\n  version:2\n  renderer:NetworkManager" | sudo tee /etc/netplan/
 
 ### make gnome terminal readable to old eyes
 dconf dump /org/gnome/terminal/ | sed "s/^font='.*'/font='Monospace 16'/" | dconf load /org/gnome/terminal/
+
+### shell personalization - zsh + oh my zsh
+sudo apt install -y zsh
+sudo chsh -s $(which zsh) $(whoami)
+ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 
 sudo reboot
 

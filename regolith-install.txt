@@ -9,7 +9,9 @@ sudo tee /etc/apt/sources.list.d/regolith.list
 sudo apt update && sudo apt dist-upgrade -y
 
 ### install regolith
-sudo apt install -y regolith-desktop regolith-session-flashback regolith-look-blackhole regolith-system-ubuntu lightdm
+sudo apt install -y regolith-desktop regolith-session-flashback regolith-look-blackhole lightdm
+sudo apt remove -y gdm3
+sudo apt install -y regolith-system-ubuntu 
 
 ### allow networking via applet
 sudo apt install -y regolith-wm-networkmanager

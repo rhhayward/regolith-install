@@ -22,8 +22,15 @@ dconf dump /org/gnome/terminal/ | sed "s/^font='.*'/font='Monospace 16'/" | dcon
 ### shell personalization - zsh + oh my zsh
 sudo apt install -y zsh
 sudo chsh -s $(which zsh) $(whoami)
-ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "n" | ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+### add some software through apt
+sudo apt install -y firefox kicad freecad
+
+### add arduino from zip file
+curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-idea-2.zip
+mkdir ~/Arduino/
+unzip /tmp/arduino-idea-2.zip -d ~/Arduino/
 
 sudo reboot
 

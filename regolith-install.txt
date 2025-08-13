@@ -5,7 +5,7 @@ curl -s https://archive.regolith-desktop.com/regolith.key | gpg --dearmor | sudo
 echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://archive.regolith-desktop.com/ubuntu/stable noble v3.3" | \
 sudo tee /etc/apt/sources.list.d/regolith.list
 
-# Update apt
+# system udpate via apt
 sudo apt update && sudo apt dist-upgrade -y
 
 ### install regolith

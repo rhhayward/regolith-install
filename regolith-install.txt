@@ -29,10 +29,11 @@ echo "n" | ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/oh
 ### add some software through apt
 sudo apt install -y firefox kicad freecad
 
-### add arduino from zip file
+### add arduino from zip file, add desktop file
 curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-idea-2.zip
 mkdir ~/Arduino/
 unzip /tmp/arduino-idea-2.zip -d ~/Arduino/
+ln -s $(PWD)/Arduino/arduino-ide_2.3.3_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
 
 sudo reboot
 

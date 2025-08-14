@@ -43,7 +43,7 @@ else
 fi
 
 ### add some software through apt and snap
-sudo apt install -y firefox kicad
+sudo apt install -y firefox kicad unzip
 sudo snap install freecad
 
 ### add arduino from zip file, add desktop file

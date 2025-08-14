@@ -54,8 +54,8 @@ else
     curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-idea-2.zip
     unzip /tmp/arduino-idea-2.zip -d ~/Arduino/
     sudo chown root:root /home/rhh/Arduino/arduino-ide_2.3.6_Linux_64bit/chrome-sandbox
-    sudo chmod 4755 /home/rhh/Arduino/arduino-ide_2.3.3_Linux_64bit/chrome-sandbox
-    ln -s $HOME/Arduino/arduino-ide_2.3.6_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
+    sudo chmod 4755 /home/rhh/Arduino/arduino-ide_2.3.6_Linux_64bit/chrome-sandbox
+    sudo ln -s $HOME/Arduino/arduino-ide_2.3.6_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
     rm /tmp/arduino-idea-2.zip
 fi
 

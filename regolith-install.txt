@@ -9,44 +9,57 @@ sudo tee /etc/apt/sources.list.d/regolith.list
 sudo apt update && sudo apt dist-upgrade -y
 
 ### install regolith
-sudo apt install -y regolith-desktop regolith-session-flashback regolith-look-blackhole lightdm
+sudo apt install -y lightdm
+sudo apt install -y regolith-desktop
 sudo apt remove -y gdm3
+sudo apt install -y regolith-session-flashback regolith-look-blackhole
 sudo apt install -y regolith-system-ubuntu 
+sudo apt remove -y zutty
 
 ### allow networking via applet
 sudo apt install -y regolith-wm-networkmanager
 sudo systemctl disable systemd-networkd-wait-online.service && sudo systemctl mask systemd-networkd-wait-online.service
-echo "network:\n  version:2\n  renderer:NetworkManager" | sudo tee /etc/netplan/50-cloud-init.yaml
+printf "network:\n  version:2\n  renderer:NetworkManager\n" | sudo tee /etc/netplan/50-cloud-init.yaml
 
 ### regolith customizations
 sudo apt install -y i3xrocks-battery
 mkdir -p ~/.config/regolith3/i3xrocks/conf.d/
-echo "command=/usr/share/i3xrocks/scripts/$BLOCK_NAME\nseparator_block_width=35\nmarkup=pango\ncolor=xresource:i3xrocks.value.color\nlabel_color=xresource:i3xrocks.label.color" > ~/.config/regolith3/i3xrocks/conf.d/01_setup
-echo "[battery]\ninterval=10" > ~/.config/regolith3/i3xrocks/conf.d/80_battery
-echo "[time]\ncommand=date '+%Y-%m-%d %H:%M:%S'\ninterval=5" > ~/.config/regolith3/i3xrocks/conf.d/99_custom
+printf "command=/usr/share/i3xrocks/scripts/$BLOCK_NAME\nseparator_block_width=35\nmarkup=pango\ncolor=xresource:i3xrocks.value.color\nlabel_color=xresource:i3xrocks.label.color\n" > ~/.config/regolith3/i3xrocks/conf.d/01_setup
+printf "[battery]\ninterval=10\n" > ~/.config/regolith3/i3xrocks/conf.d/80_battery
+printf "[time]\ncommand=date '+%Y-%m-%d %H:%M:%S'\ninterval=5\n" > ~/.config/regolith3/i3xrocks/conf.d/99_custom
 
 
 ### make gnome terminal readable to old eyes
-dconf dump /org/gnome/terminal/ | sed "s/^font='.*'/font='Monospace 16'/" | dconf load /org/gnome/terminal/
+echo W2xlZ2FjeV0KZGVmYXVsdC1zaG93LW1lbnViYXI9ZmFsc2UKaGVhZGVyYmFyPUBtYiBmYWxzZQoKW2xlZ2FjeS9wcm9maWxlczpdCmRlZmF1bHQ9J2EyNDAyY2EyLWQwOWEtNDQ0Yy1iZTZhLTFhYThjZmRmMDFhOScKbGlzdD1bJ2EyNDAyY2EyLWQwOWEtNDQ0Yy1iZTZhLTFhYThjZmRmMDFhOSddCgpbbGVnYWN5L3Byb2ZpbGVzOi86YTI0MDJjYTItZDA5YS00NDRjLWJlNmEtMWFhOGNmZGYwMWE5XQphdWRpYmxlLWJlbGw9ZmFsc2UKYmFja2dyb3VuZC1jb2xvcj0nIzAwMDAwMCcKYmFja2dyb3VuZC10cmFuc3BhcmVuY3ktcGVyY2VudD00CmJvbGQtY29sb3I9JyM3M2QwZmYnCmJvbGQtY29sb3Itc2FtZS1hcy1mZz1mYWxzZQpib2xkLWlzLWJyaWdodD1mYWxzZQpjdXJzb3ItYmFja2dyb3VuZC1jb2xvcj0nI2U2ZTFjZicKY3Vyc29yLWJsaW5rLW1vZGU9J29mZicKY3Vyc29yLWNvbG9ycy1zZXQ9dHJ1ZQpjdXJzb3ItZm9yZWdyb3VuZC1jb2xvcj0nI2ZmMzMzMycKZm9udD0nU2F1Y2VDb2RlUHJvIE5lcmQgRm9udCBNb25vIDE2Jwpmb3JlZ3JvdW5kLWNvbG9yPScjZTZlMWNmJwpoaWdobGlnaHQtYmFja2dyb3VuZC1jb2xvcj0nI2U2ZTFjZicKaGlnaGxpZ2h0LWNvbG9ycy1zZXQ9dHJ1ZQpoaWdobGlnaHQtZm9yZWdyb3VuZC1jb2xvcj0nIzAwMDAwMCcKbm9yZC1nbm9tZS10ZXJtaW5hbC12ZXJzaW9uPScwLjEuMCcKcGFsZXR0ZT1bJyMwMDAwMDAnLCAnI2ZmMzMzMycsICcjYmFlNjdlJywgJyNmZmQ1ODAnLCAnIzczZDBmZicsICcjZjI4Nzc5JywgJyM5NWU2Y2InLCAnI2U2ZTFjZicsICcjZTZlMWNmJywgJyNmZjMzMzMnLCAnI2JhZTY3ZScsICcjZmZkNTgwJywgJyM3M2QwZmYnLCAnI0I0OEVBRCcsICcjOTVlNmNiJywgJyNmZmZmZmYnXQpzY3JvbGxiYXItcG9saWN5PSduZXZlcicKdXNlLXN5c3RlbS1mb250PWZhbHNlCnVzZS10aGVtZS1iYWNrZ3JvdW5kPWZhbHNlCnVzZS10aGVtZS1jb2xvcnM9ZmFsc2UKdXNlLXRoZW1lLXRyYW5zcGFyZW5jeT1mYWxzZQp1c2UtdHJhbnNwYXJlbnQtYmFja2dyb3VuZD1mYWxzZQp2aXNpYmxlLW5hbWU9J2N1c3RvbScK | base64 -d | dconf load /org/gnome/terminal/
 
 ### shell personalization - zsh + oh my zsh
-sudo apt install -y zsh
-sudo chsh -s $(which zsh) $(whoami)
-echo "n" | ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ -f "$HOME/.zshrc" ]; then
+    echo "~/.zshrc already exists - skipping zsh and oh-my-zsh step"
+else
+    sudo apt install -y zsh
+    sudo chsh -s $(which zsh) $(whoami)
+    echo "n" | ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    printf "\nbindkey -v\nbindkey '^R' history-incremental-search-backward\n" >> ~/.zshrc
+fi
 
-### add some software through apt
-sudo apt install -y firefox kicad freecad
+### add some software through apt and snap
+sudo apt install -y firefox kicad
+sudo snap install freecad
 
 ### add arduino from zip file, add desktop file
-if [ -d "$(PWD)/Arduino/" ]; then
-    echo "~/Arduino/ already exists - skipping step"
+if [ -d "$HOME/Arduino/" ]; then
+    echo "~/Arduino/ already exists - skipping Arduino install step"
 else
     mkdir ~/Arduino/
     curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-idea-2.zip
     unzip /tmp/arduino-idea-2.zip -d ~/Arduino/
-    ln -s $(PWD)/Arduino/arduino-ide_2.3.3_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
+    sudo chown root:root /home/rhh/Arduino/arduino-ide_2.3.6_Linux_64bit/chrome-sandbox
+    sudo chmod 4755 /home/rhh/Arduino/arduino-ide_2.3.3_Linux_64bit/chrome-sandbox
+    ln -s $HOME/Arduino/arduino-ide_2.3.6_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
     rm /tmp/arduino-idea-2.zip
 fi
 
 sudo reboot
+
+
 

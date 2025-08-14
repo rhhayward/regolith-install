@@ -26,7 +26,7 @@ sudo apt install -y i3xrocks-battery
 mkdir -p ~/.config/regolith3/i3xrocks/conf.d/
 printf 'command=/usr/share/i3xrocks/scripts/$BLOCK_NAME\nseparator_block_width=35\nmarkup=pango\ncolor=xresource:i3xrocks.value.color\nlabel_color=xresource:i3xrocks.label.color\n' > ~/.config/regolith3/i3xrocks/conf.d/01_setup
 printf "[battery]\ninterval=10\n" > ~/.config/regolith3/i3xrocks/conf.d/80_battery
-printf "[time]\ncommand=date '+\%Y-\%m-\%d \%H:\%M:\%S'\ninterval=5\n" > ~/.config/regolith3/i3xrocks/conf.d/99_custom
+printf "[time]\ncommand=date '+%%Y-%%m-%%d %%H:%%M:%%S'\ninterval=5\n" > ~/.config/regolith3/i3xrocks/conf.d/99_custom
 
 
 ### make gnome terminal readable to old eyes

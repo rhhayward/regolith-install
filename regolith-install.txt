@@ -59,6 +59,8 @@ else
     rm /tmp/arduino-idea-2.zip
 fi
 
+sudo apt autoremove -y && sudo apt autoclean -y
+
 sudo reboot
 
 

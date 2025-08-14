@@ -30,7 +30,7 @@ printf "[time]\ncommand=date '+%%Y-%%m-%%d %%H:%%M:%%S'\ninterval=5\n" > ~/.conf
 
 
 ### make gnome terminal readable to old eyes
-echo W2xlZ2FjeV0KZGVmYXVsdC1zaG93LW1lbnViYXI9ZmFsc2UKaGVhZGVyYmFyPUBtYiBmYWxzZQoKW2xlZ2FjeS9wcm9maWxlczpdCmRlZmF1bHQ9J2EyNDAyY2EyLWQwOWEtNDQ0Yy1iZTZhLTFhYThjZmRmMDFhOScKbGlzdD1bJ2EyNDAyY2EyLWQwOWEtNDQ0Yy1iZTZhLTFhYThjZmRmMDFhOSddCgpbbGVnYWN5L3Byb2ZpbGVzOi86YTI0MDJjYTItZDA5YS00NDRjLWJlNmEtMWFhOGNmZGYwMWE5XQphdWRpYmxlLWJlbGw9ZmFsc2UKYmFja2dyb3VuZC1jb2xvcj0nIzAwMDAwMCcKYmFja2dyb3VuZC10cmFuc3BhcmVuY3ktcGVyY2VudD00CmJvbGQtY29sb3I9JyM3M2QwZmYnCmJvbGQtY29sb3Itc2FtZS1hcy1mZz1mYWxzZQpib2xkLWlzLWJyaWdodD1mYWxzZQpjdXJzb3ItYmFja2dyb3VuZC1jb2xvcj0nI2U2ZTFjZicKY3Vyc29yLWJsaW5rLW1vZGU9J29mZicKY3Vyc29yLWNvbG9ycy1zZXQ9dHJ1ZQpjdXJzb3ItZm9yZWdyb3VuZC1jb2xvcj0nI2ZmMzMzMycKZm9udD0nU2F1Y2VDb2RlUHJvIE5lcmQgRm9udCBNb25vIDE2Jwpmb3JlZ3JvdW5kLWNvbG9yPScjZTZlMWNmJwpoaWdobGlnaHQtYmFja2dyb3VuZC1jb2xvcj0nI2U2ZTFjZicKaGlnaGxpZ2h0LWNvbG9ycy1zZXQ9dHJ1ZQpoaWdobGlnaHQtZm9yZWdyb3VuZC1jb2xvcj0nIzAwMDAwMCcKbm9yZC1nbm9tZS10ZXJtaW5hbC12ZXJzaW9uPScwLjEuMCcKcGFsZXR0ZT1bJyMwMDAwMDAnLCAnI2ZmMzMzMycsICcjYmFlNjdlJywgJyNmZmQ1ODAnLCAnIzczZDBmZicsICcjZjI4Nzc5JywgJyM5NWU2Y2InLCAnI2U2ZTFjZicsICcjZTZlMWNmJywgJyNmZjMzMzMnLCAnI2JhZTY3ZScsICcjZmZkNTgwJywgJyM3M2QwZmYnLCAnI0I0OEVBRCcsICcjOTVlNmNiJywgJyNmZmZmZmYnXQpzY3JvbGxiYXItcG9saWN5PSduZXZlcicKdXNlLXN5c3RlbS1mb250PWZhbHNlCnVzZS10aGVtZS1iYWNrZ3JvdW5kPWZhbHNlCnVzZS10aGVtZS1jb2xvcnM9ZmFsc2UKdXNlLXRoZW1lLXRyYW5zcGFyZW5jeT1mYWxzZQp1c2UtdHJhbnNwYXJlbnQtYmFja2dyb3VuZD1mYWxzZQp2aXNpYmxlLW5hbWU9J2N1c3RvbScK | base64 -d | dconf load /org/gnome/terminal/
+echo W2xlZ2FjeV0KZGVmYXVsdC1zaG93LW1lbnViYXI9ZmFsc2UKaGVhZGVyYmFyPUBtYiBmYWxzZQoKW2xlZ2FjeS9wcm9maWxlczpdCmRlZmF1bHQ9JzhmMzMyMzMxLTA1M2YtNDBjYi1iMDVkLWIyYWM2NmU3MTAwNycKbGlzdD1bJzhmMzMyMzMxLTA1M2YtNDBjYi1iMDVkLWIyYWM2NmU3MTAwNyddCgpbbGVnYWN5L3Byb2ZpbGVzOi86OGYzMzIzMzEtMDUzZi00MGNiLWIwNWQtYjJhYzY2ZTcxMDA3XQphdWRpYmxlLWJlbGw9ZmFsc2UKYmFja2dyb3VuZC1jb2xvcj0ncmdiKDAsMCwwKScKYmFja2dyb3VuZC10cmFuc3BhcmVuY3ktcGVyY2VudD00CmJvbGQtY29sb3I9JyM3M2QwZmYnCmJvbGQtY29sb3Itc2FtZS1hcy1mZz1mYWxzZQpib2xkLWlzLWJyaWdodD1mYWxzZQpjdXJzb3ItYmFja2dyb3VuZC1jb2xvcj0nI2U2ZTFjZicKY3Vyc29yLWJsaW5rLW1vZGU9J29mZicKY3Vyc29yLWNvbG9ycy1zZXQ9dHJ1ZQpjdXJzb3ItZm9yZWdyb3VuZC1jb2xvcj0nI2ZmMzMzMycKZm9udD0nU2F1Y2VDb2RlUHJvIE5lcmQgRm9udCBNb25vIDE2Jwpmb3JlZ3JvdW5kLWNvbG9yPSdyZ2IoMjU1LDI1NSwyNTUpJwpoaWdobGlnaHQtYmFja2dyb3VuZC1jb2xvcj0nI2U2ZTFjZicKaGlnaGxpZ2h0LWNvbG9ycy1zZXQ9dHJ1ZQpoaWdobGlnaHQtZm9yZWdyb3VuZC1jb2xvcj0nIzAwMDAwMCcKbm9yZC1nbm9tZS10ZXJtaW5hbC12ZXJzaW9uPScwLjEuMCcKcGFsZXR0ZT1bJyMwMDAwMDAnLCAnI2ZmMzMzMycsICcjYmFlNjdlJywgJyNmZmQ1ODAnLCAnIzczZDBmZicsICcjZjI4Nzc5JywgJyM5NWU2Y2InLCAnI2U2ZTFjZicsICcjZTZlMWNmJywgJyNmZjMzMzMnLCAnI2JhZTY3ZScsICcjZmZkNTgwJywgJyM3M2QwZmYnLCAnI0I0OEVBRCcsICcjOTVlNmNiJywgJyNmZmZmZmYnXQpzY3JvbGxiYXItcG9saWN5PSduZXZlcicKdXNlLXN5c3RlbS1mb250PWZhbHNlCnVzZS10aGVtZS1iYWNrZ3JvdW5kPWZhbHNlCnVzZS10aGVtZS1jb2xvcnM9ZmFsc2UKdXNlLXRoZW1lLXRyYW5zcGFyZW5jeT1mYWxzZQp1c2UtdHJhbnNwYXJlbnQtYmFja2dyb3VuZD1mYWxzZQp2aXNpYmxlLW5hbWU9J1JlZ29saXRoJwoKW2xlZ2FjeS9wcm9maWxlczovOmEyNDAyY2EyLWQwOWEtNDQ0Yy1iZTZhLTFhYThjZmRmMDFhOV0Kbm9yZC1nbm9tZS10ZXJtaW5hbC12ZXJzaW9uPScwLjEuMCcKdXNlLXRoZW1lLWJhY2tncm91bmQ9ZmFsc2UK | base64 -d | dconf load /org/gnome/terminal/
 
 ### shell personalization - zsh + oh my zsh
 if [ -f "$HOME/.zshrc" ]; then
@@ -46,17 +46,21 @@ fi
 sudo apt install -y firefox kicad unzip
 sudo snap install freecad
 
+
 ### add arduino from zip file, add desktop file
-if [ -d "$HOME/Arduino/" ]; then
-    echo "~/Arduino/ already exists - skipping Arduino install step"
+if [ -d "/opt/Arduino/" ]; then
+    echo "/opt/Arduino/ already exists - skipping Arduino install step"
 else
-    mkdir ~/Arduino/
-    curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-idea-2.zip
-    unzip /tmp/arduino-idea-2.zip -d ~/Arduino/
-    sudo chown root:root /home/rhh/Arduino/arduino-ide_2.3.6_Linux_64bit/chrome-sandbox
-    sudo chmod 4755 /home/rhh/Arduino/arduino-ide_2.3.6_Linux_64bit/chrome-sandbox
-    sudo ln -s $HOME/Arduino/arduino-ide_2.3.6_Linux_64bit/Arduino-IDE-2.desktop /usr/share/applications/
-    rm /tmp/arduino-idea-2.zip
+    sudo usermod -a -G dialout $(whoami)
+    sudo mkdir /opt/Arduino/
+    curl https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.zip -o /tmp/arduino-ide-2.zip
+    sudo unzip /tmp/arduino-ide-2.zip -d /opt/Arduino/
+    sudo chown root:root /opt/Arduino/arduino-ide_2.3.6_Linux_64bit/chrome-sandbox
+    sudo chmod 4755 /opt/Arduino/arduino-ide_2.3.6_Linux_64bit/chrome-sandbox
+    sudo curl -o /opt/Arduino/arduino-ide.png https://i.sstatic.net/HbDAj.png
+    printf "[Desktop Entry]\nExec=/opt/Arduino/arduino-ide_2.3.6_Linux_64bit/arduino-ide\nIcon=/opt/Arduino/arduino-ide.png\nName[en_US]=Arduino IDE\nName=Arduino IDE\nPath=\nStartupNotify=false\nTerminal=false\nType=Application\n" | sudo tee /opt/Arduino/arduino-ide.desktop > /dev/null
+    sudo ln -s /opt/Arduino/arduino-ide.desktop /usr/share/applications/
+    rm /tmp/arduino-ide-2.zip
 fi
 
 sudo apt autoremove -y && sudo apt autoclean -y

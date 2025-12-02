@@ -40,11 +40,10 @@ else
 fi
 
 ### add some software through apt and snap
-sudo apt install -y firefox kicad unzip make gcc ripgrep unzip git xclip nvm
+sudo apt install -y firefox kicad unzip make gcc ripgrep unzip git xclip
 sudo snap install freecad
 sudo snap install mailspring
 sudo snap install nvim --classic
-sudo nvm install node 22
 
 ### add nvm and install node 22+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash

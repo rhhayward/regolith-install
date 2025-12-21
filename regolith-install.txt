@@ -19,7 +19,8 @@ sudo apt remove -y zutty
 ### allow networking via applet
 sudo apt install -y regolith-wm-networkmanager
 sudo systemctl disable systemd-networkd-wait-online.service && sudo systemctl mask systemd-networkd-wait-online.service
-printf "network:\n  version:2\n  renderer:NetworkManager\n" | sudo tee /etc/netplan/50-cloud-init.yaml
+printf "network:\n  version: 2\n  renderer: NetworkManager\n" | sudo tee /etc/netplan/50-cloud-init.yaml
+sudo chmod og-rwx /etc/netplan/50-cloud-init.yaml
 
 ### regolith customizations
 sudo apt install -y i3xrocks-battery
